@@ -1,0 +1,17 @@
+#SCRIPT DO GRÁFICO COM DADOS DA SELIC
+
+#PASSO 1- Instalando Bibliotecas
+!pip install python-bcb
+
+#PASSO 2- Importando Bibliotecas
+from bcb import sgs
+import pandas as pd
+from matplotlib import pyplot as plt
+
+#PASSO 3- Filtrando informações
+selic=sgs.get(('selic', 432), start='2020-01-01')
+
+#PASSO 4- Plotando Gráfico
+plt.style.use('ggplot')
+selic.plot(figsize=(15,10))
+
