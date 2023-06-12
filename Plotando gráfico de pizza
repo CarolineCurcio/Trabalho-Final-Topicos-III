@@ -1,4 +1,4 @@
-#SCRIPT PARA PLOTAR GRÁFICO DE LINHAS#
+#SCRIPT PARA PLOTAR GRÁFICO DE PIZZA#
 
 #PASSO 1- Importando Blibliotecas
 import yfinance as yf
