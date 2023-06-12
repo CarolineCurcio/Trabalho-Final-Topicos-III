@@ -1,0 +1,14 @@
+#SCRIPT DO GRÁFICO DO IEE
+
+#PASSO 1- Instalando Biblioteca
+pip install bovespa
+
+#PASSO 2- Importando Bliblioteca
+import bovespa as bf
+
+
+#PASSO 3- Fazendo download dos dados
+df = yf.download("AESB3.SA ALUP11.SA AURE3.SA CMIG4.SA COCE5.SA CPLE6.SA CPFE3.SA ELET3.SA ENBR3.SA ENGI11.SA ENEV3.SA EGIE3.SA EQTL3.SA NEOE3.SA MEGA3.SA TAEE11.SA TRPL4.SA", start="2020-01-01")["Adj Close"]
+
+#PASSO 4- Plotando o Gráfico
+df.plot(figsize = (15,6))
