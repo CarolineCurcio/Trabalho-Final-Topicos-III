@@ -1,0 +1,32 @@
+#SCRIPT PARA PLOTAR GRÁFICO DE LINHAS#
+
+#PASSO 1- Importando Blibliotecas
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+def mostrar_grafico_pizza(empresas, valores):
+#PASSO 2- Criação do gráfico de pizza
+fig, ax = plt.subplots()
+ax.pie(valores, labels=empresas, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')  # Mantém a forma do círculo
+    
+#PASSO 3- Adicionando um título ao gráfico
+ plt.title('Análise de Investimentos')
+    
+#PASSO 4- Exibindo o gráfico
+    plt.show()
+    
+#PASSO 5- Definindo as Empresas desejadas
+empresas = ['NEOE3.SA', 'EGIE3.SA', 'ENGI11.SA', 'MEGA3.SA', 'ENEV3.SA', 'AURE3.SA']
+
+#PASSO 6- Montando a lista para armazenar os valores de fechamento das ações
+valores = []
+
+#Passo 7- Obtenção dos dados históricos das ações
+for empresa in empresas:
+    dados = yf.download(empresa, start='2023-01-01', end='2023-06-11', progress=False)
+    valor_fechamento = dados['Close'].iloc[-1]
+    valores.append(valor_fechamento)
+    
+# Passo 8- Função para exibir o gráfico de pizza
+mostrar_grafico_pizza(empresas, valores)
