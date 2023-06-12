@@ -1,7 +1,11 @@
+#SCRIPT DO GRÁFICO DE LINHAS SOBRE AS EMPRESAS DESEJADAS#
+
+#PASSO 1- Instalando Bibliotecas#
 !pip install pandas_datareader
 !pip install yfinance
 !pip install plotly
 
+#PASSO 2- Importando Bibliotecas#
 import numpy as np
 import pandas as pd
 from pandas_datareader import data as wb
@@ -11,7 +15,9 @@ import requests
 from bs4 import BeautifulSoup
 import plotly.express as px
 
+#PASSO 3- Download de informações sobre as empresas da Carteira de Investimentos#
 data = yf.download("NEOE3.SA EGIE3.SA ENGI11.SA MEGA3.SA ENEV3.SA AURE3.SA", start="2023-01-01")["Adj Close"]
 
+#PASSO 4- Plotando Gráfico de Linhas#
 df.plot(figsize = (15,6))
 plt.show
